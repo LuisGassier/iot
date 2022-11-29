@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "iot-s-b84e1": {
+      "hosting": {
+        "iot": [
+          "iot-s-b84e1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "iot-s-b84e1"
+  }
+}

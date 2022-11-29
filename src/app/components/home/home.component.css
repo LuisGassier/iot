@@ -1,0 +1,62 @@
+/* centrar todo el contenido */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+}
+
+
+/* table con bordes de 1px y redondeados */
+table {
+  /* alinea la tabla al centro */
+  margin: 0 auto;
+  border-collapse: collapse;
+  /* bordes redondeados */
+  border-radius: 5px;
+  overflow: hidden;
+  /* ancho de la tabla */
+  width: 80%;
+  /* alto de la tabla */
+  max-width: 1000px;
+  /* borde */
+  box-shadow: 0 0 20px rgba(5, 5, 5, 0.15);
+    /* borde de la tabla */
+    border: 1px solid #ddd;
+    /* color blanco */
+    color: rgb(0, 0, 0);
+    /* color de fondo blanco */
+    background: #fff;
+    /* espacio abajo */
+    margin-bottom: 15px;
+    /* margenes en todos */
+}
+
+/* card con background color rojo */
+.card-red {
+  background: #f44336;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.card-green {
+  background: #4caf50;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  /* centrar la tarjeta */
+    margin: 0 auto;
+}
+
+.card-blue {
+  background: #2196f3;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+}

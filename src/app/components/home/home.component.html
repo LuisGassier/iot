@@ -1,0 +1,82 @@
+
+<!-- muestra time y value en tipo dashboard -->
+
+<!-- card -->
+<div *ngIf="loading" class="d-flex justify-content-center mt-3">
+    <app-spinner></app-spinner>
+</div>
+
+<!-- tabla de contenido con los datos -->
+<div *ngIf="!loading" class="row" >
+    <div class="col-md-12"  *ngFor="let item of data">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h1 class="card-title ">Dashboard</h1>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                <h3>Hora de ultima medición</h3>
+                            </th>
+                            <th>
+                                <h3>Valor de la medición</h3>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {{item.time}}
+                                </td>
+                                <td>
+                                    {{item.value}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- si el valor está entre 20 y 28 la calidad del agua es buena -->
+        
+        <div class="card-green" style="width:18rem;"  *ngIf="item.value >= 20 && item.value <= 28">
+            <div class="card-body">
+                <div  class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">¡Buena calidad!</h4>
+                    <p>La calidad del agua es buena.</p>
+                    <hr>
+                    <p class="mb-0">Puedes consumirla con seguridad.</p>
+                </div>
+            </div>
+          </div>
+        <!-- si el valor está entre 28 y 32 la calidad del agua es regular y la card blue -->
+        
+        <div class="card-blue" style="width:18rem;"  *ngIf="item.value >= 28 && item.value <= 32" class="alert alert-primary" role="alert">
+            <div class="card-body">
+                <div>
+                    <h4 class="alert-heading">¡Poco recomendada!</h4>
+                    <p>Agua con poca contaminación.</p>
+                    <hr>
+                    <p class="mb-0">La calidad del agua no está en optimas condiciones, se reomienda solo consumir en caso de emergencia.</p>
+                </div>
+            </div>
+          </div>
+          
+        <!-- si el valor es cualquier otro la calidad del agua es mala -->
+        <!-- muestra una card color  rojo-->
+        <div class="card-red" style="width:18rem;" *ngIf="item.value < 20 || item.value > 32">
+          <div class="card-body">
+            <div  class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">¡No consumir!</h4>
+                <!-- icono de peligro -->
+                <p>Agua contaminada.</p>
+                <hr>
+                <p class="mb-0">La calidad del agua es MALA.</p>
+            </div>
+          </div>
+        </div>
+
+       
+    </div>
+</div>
